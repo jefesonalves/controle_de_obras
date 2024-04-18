@@ -5,7 +5,7 @@ from .models import Despesa, Fornecedor
 
 class DespesaAdmin(admin.ModelAdmin):
     
-    list_display = ["data_despesa", "descricao_despesa", "nome_fornecedor", "valor_despesa"]
+    list_display = ["data_despesa", "descricao_despesa", "nome_fornecedor", "quant_despesa", "valor_despesa", "total_despesa"]
     list_filter = ["data_despesa"]
     search_fields = ["descricao_despesa"]
 
