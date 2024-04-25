@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    Excluir Despesa
+{% endblock page_title %}
+
+{% block content  %}
+    <h1>Excluir Despesa?</h1>
+
+    <p>Tem certeza que deseja excluir a desapesa {{ despesa.despesa }}</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        <button type="submit" class="btn btn-danger">Sim</button>
+        <a href="{% url "despesas_list" %}" class="btn btn-primary">Não</a>
+    </form>
+{% endblock content %}

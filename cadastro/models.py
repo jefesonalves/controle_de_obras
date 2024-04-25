@@ -25,6 +25,7 @@ class Despesa(models.Model):
 
     class Meta:
         verbose_name_plural = 'Despesas'
+        ordering = ["-data_despesa"]
 
 
     def __str__(self):

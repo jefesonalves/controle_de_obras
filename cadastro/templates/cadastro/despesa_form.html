@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block page_title %}
+    {% if despesa.pk %}
+        Editar Despesa
+    {% else %}
+        Nova Despesa
+    {% endif %}
+{% endblock page_title %}
+
+{% block content %}
+    {% if despesa.pk %}
+        <h1>Editar Despesa</h1>
+    {% else %}
+        <h1>Nova Despesa</h1>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form|crispy }}
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+{% endblock content %}    
