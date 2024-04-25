@@ -10,14 +10,12 @@ class DespesasListView(ListView):
     
 class DespesasCreateView(CreateView):
     model = Despesa
-    # fields = ["descricao_despesa"]
     fields = ["data_despesa", "descricao_despesa", "nome_fornecedor", "quant_despesa", "valor_despesa"]
     success_url = reverse_lazy("despesas_list")
 
 class DespesasUpdateView(UpdateView):
     model = Despesa
-    fields = ["descricao_despesa"]
-    #fields = ["data_despesa", "descricao_despesa", "nome_fornecedor", "quant_despesa", "valor_despesa"]
+    fields = ["data_despesa", "descricao_despesa", "nome_fornecedor", "quant_despesa", "valor_despesa"]
     success_url = reverse_lazy("despesas_list")
 
 class DespesasDeleteView(DeleteView):
