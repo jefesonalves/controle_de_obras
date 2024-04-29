@@ -4,27 +4,27 @@
     Lista de Despesas
 {% endblock page_title %}
 
-
 {% block content %}
-  <h1>Lista de Despesa</h1>
+  <h1>Lista de Despesas</h1>
 
   {% if despesa_list %}
     <table class="table">
       <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Data</th>
-        <th scope="col">Descrição</th>
-        <th scope="col">Fornecedor</th>
-        <th scope="col">Quantidade</th>
-        <th scope="col">Valor Unitário</th>
-        <th scope="col">Valor Total</th>
-      </tr>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Data</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Fornecedor</th>
+          <th scope="col">Quantidade</th>
+          <th scope="col">Valor Unitário</th>
+          <th scope="col">Valor Total</th>
+          <th scope="col"></th>
+        </tr>
       </thead>
       <tbody>
           {% for despesa in despesa_list %}
               <tr>
-                <th scope="row">{{ despesa.pk }}</th>
+                <th scope="row">{{ despesa.pk }} </th>
                 <td>{{ despesa.data_despesa }}</td>
                 <td>{{ despesa.descricao_despesa }}</td>
                 <td>{{ despesa.nome_fornecedor }}</td>
@@ -32,8 +32,8 @@
                 <td>{{ despesa.valor_despesa }}</td>
                 <td>{{ despesa.total_despesa }}</td>
                 <td>
-                    <a href="{% url "despesas_update" pk=despesa.pk %}" class="btn btn-secondary btn-sm">Editar</a>
-                    <a href="{% url "despesas_delete" pk=despesa.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+                  <a href="{% url "despesas_update" pk=despesa.pk %}" class="btn btn-secondary btn-sm">Editar</a>
+                  <a href="{% url "despesas_delete" pk=despesa.pk %}" class="btn btn-danger btn-sm">Excluir</a>
                 </td>
               </tr>
           {% endfor %}          

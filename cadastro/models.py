@@ -4,7 +4,9 @@ from django.db.models import F
 class Fornecedor(models.Model):
      nome_fornecedor = models.CharField(max_length=200, verbose_name='Fornecedor')
 
-     class Meta:        
+     class Meta:
+        ordering = ["-pk"]
+        verbose_name = 'Fornecedor'      
         verbose_name_plural = 'Fornecedores'
 
      def __str__(self):
@@ -24,9 +26,10 @@ class Despesa(models.Model):
     )
 
     class Meta:
+        ordering = ["-data_despesa"] #Com o sinal de subtração fica em ordem descrescente
+        verbose_name = 'Despesa'
         verbose_name_plural = 'Despesas'
-        ordering = ["-data_despesa"]
-
+        
 
     def __str__(self):
             return f'{self.descricao_despesa}'
